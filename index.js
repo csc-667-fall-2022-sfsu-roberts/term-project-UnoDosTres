@@ -12,11 +12,14 @@ class Sprite {
     }
 
     draw() {
+        c.fillStyle = "red";
+        c.fillRect(0,0, canvas.width, canvas.height);
+
         c.fillStyle = "blue"
         c.fillRect(this.position.x,this.position.y, 50, 110);
 
-        c.fillStyle = "black"
-        c.fillRect(this.position.x,this.position.y, 20, 30);
+        c.fillStyle = "white"
+        c.fillRect(canvas.width/2,canvas.widith/2, 20, 30);
     }
 }
 
