@@ -1,8 +1,8 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 
-canvas.width = 500;
-canvas.height = 800;
+canvas.width = innerWidth/2;
+canvas.height = innerHeight/2;
 
 c.fillRect(0,0, canvas.width,canvas.height);
 
