@@ -6,7 +6,7 @@ canvas.height = innerHeight;
 
 c.fillRect(0,0, canvas.width,canvas.height);
 
-class sprite {
+class Sprite {
     constructor(position) {
         this.position = position;
     }
@@ -14,10 +14,13 @@ class sprite {
     draw() {
         c.fillStyle = "blue"
         c.fillRect(this.position.x,this.position.y, 50, 110);
+
+        c.fillStyle = "black"
+        c.fillRect(this.position.x,this.position.y, 20, 30);
     }
 }
 
-const card = new sprite({ x:0, y:0 });
+const card = new Sprite({ x:0, y:0 });
 
 card.draw();
 
