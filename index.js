@@ -18,7 +18,7 @@ class Sprite {
         c.fillStyle = "blue"
         c.fillRect(this.position.x,this.position.y, 50, 110);
 
-        c.fillStyle = "white"
+        c.fillStyle = "green"
         c.fillRect(canvas.width/2,canvas.widith/2, 20, 30);
     }
 }
