@@ -16,10 +16,10 @@ class Sprite {
         c.fillRect(0,0, canvas.width, canvas.height);
 
         c.fillStyle = "blue"
-        c.fillRect(this.position.x,this.position.y, this.position.x + 500, this.position.y + 110);
+        c.fillRect(this.position.x,this.position.y, 500, 110);
 
         c.fillStyle = "green"
-        c.fillRect(canvas.width/2,canvas.widith/2, (canvas.width/2) + 20,(canvas.height/2) + 30);
+        c.fillRect(300,500, 20,30);
     }
 }
 
