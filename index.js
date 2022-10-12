@@ -12,7 +12,7 @@ class Sprite {
     }
 
     draw() {
-        c.fillStyle = "red";
+        c.fillStyle = "orange";
         c.fillRect(0,0, canvas.width, canvas.height);
 
         c.fillStyle = "blue"
