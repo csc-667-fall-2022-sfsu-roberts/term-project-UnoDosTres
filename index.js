@@ -19,7 +19,7 @@ class Sprite {
         c.fillRect(this.position.x,this.position.y, this.position.x + 500, this.position.y + 110);
 
         c.fillStyle = "green"
-        c.fillRect(canvas.width/2,canvas.widith/2, 20, 30);
+        c.fillRect(canvas.width/2,canvas.widith/2, (canvas.width/2) + 20,(canvas.height/2) + 30);
     }
 }
 
