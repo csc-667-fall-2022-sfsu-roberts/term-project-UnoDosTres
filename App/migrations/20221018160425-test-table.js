@@ -16,7 +16,7 @@ module.exports = {
         },
         testString: {
           type: Sequelize.STRING,
-          allowNull: false  
+          allowNull: false
         }
       }
     );
