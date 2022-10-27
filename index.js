@@ -11,6 +11,9 @@ playerCardPos = canvas.width - 35, canvas.height + 200;
 deckPos = canvas.width*0.75, canvas.height*0.75;
 centerPos =  canvas.width - 35, canvas.height - 75;
 
+takenCard = false;
+placedCard = false;
+
 class Sprite {
     constructor(position, velocity) {
         this.position = position;
@@ -77,17 +80,21 @@ animate();
 window.addEventListener('keydown', (event) => {
     switch(event.key) {
         case i:
-            takeCard();
+            takeCard = true;
         break;
         case o:
-            putCard();
+            placedCard = true;
         break;
-}
+    }
+})
+
 window.addEventListener('keyup', (event) => {
     switch(event.key) {
         case i:
+            takeCard = false;
         break;
         case o:
+            placedCard = false;
         break;
-}
-    console.log(event.key)})
+    }
+})
