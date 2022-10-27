@@ -82,5 +82,12 @@ window.addEventListener('keydown', (event) => {
         case o:
             putCard();
         break;
-    }
+}
+window.addEventListener('keyup', (event) => {
+    switch(event.key) {
+        case i:
+        break;
+        case o:
+        break;
+}
     console.log(event.key)})
