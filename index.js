@@ -75,11 +75,12 @@ function Animate() {
 animate();
 
 window.addEventListener('keydown', (event) => {
-    if (event.key = 'i') {
-
-    }
-
-    if (event.key = 'o') {
-
+    switch(event.key) {
+        case i:
+            takeCard();
+        break;
+        case o:
+            putCard();
+        break;
     }
     console.log(event.key)})
