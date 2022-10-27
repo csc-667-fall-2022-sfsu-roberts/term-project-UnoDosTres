@@ -4,7 +4,8 @@ const c = canvas.getContext('2d');
 canvas.width = innerWidth/2;
 canvas.height = innerHeight/2;
 
-c.fillRect(0,0, canvas.width,canvas.height);
+c.fillStyle = "orange";
+c.fillRect(0,0, canvas.width, canvas.height);
 
 class Sprite {
     constructor(position) {
@@ -12,14 +13,11 @@ class Sprite {
     }
 
     draw() {
-        c.fillStyle = "orange";
-        c.fillRect(0,0, canvas.width, canvas.height);
+        //c.fillStyle = "orange";
+        //c.fillRect(0,0, canvas.width, canvas.height);
 
-        c.fillStyle = "blue"
+        c.fillStyle = "red"
         c.fillRect(this.position.x,this.position.y, 500, 110);
-
-        c.fillStyle = "green"
-        c.fillRect(300,500, 20,30);
     }
 }
 
