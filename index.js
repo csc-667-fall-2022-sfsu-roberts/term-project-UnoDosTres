@@ -16,6 +16,10 @@ colors = 3;
 takeCard = false;
 putCard = false;
 
+
+PlayerTurn = 0;
+
+
 class Sprite {
     constructor(position, type) {
         this.position = position;
@@ -40,6 +44,18 @@ class Sprite {
 
         if (putCard) {
             DropOff.type = card.type;
+            turnSkipped();
+        }
+
+        if (skipTurn) {
+            turnSkipped();
+        }
+    }
+
+    turnSkipped() {
+        PlayerTurn++;
+        if (PlayerTurn >= 4) {
+            PlayerTurn = 0;
         }
     }
 } 
