@@ -40,9 +40,12 @@ class Sprite {
         this.draw();
 
         if (takeCard) {
+
             // CHANGE NEEDED HERE - set into multiple cards
             card.type.x = int*Math.random()*cardTypes;
             card.type.y = int*Math.random()*colors;
+
+
             playerNumCards[PlayerTurn]++; // add card
             resetState();
         }
@@ -50,9 +53,13 @@ class Sprite {
         if (putCard) { // player placing card from hand
             //put card when either value type or color type is the same
             if (playerNumCards[PlayerTurn] > 0) {
+
+
                 // CHANGE NEEDED HERE - set into multiple cards
                 if ( DropOff.type.x ==  card.type.x || DropOff.type.y ==  card.type.y ) {
                     DropOff.type = card.type; // added to center
+
+                    
                     playerNumCards[PlayerTurn]--; // remove number of cards of current active player
                     turnSkipped(); // next player turn
                 }
