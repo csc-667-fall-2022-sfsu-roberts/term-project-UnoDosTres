@@ -15,9 +15,11 @@ cardTypes = 14;
 colors = 3;
 takeCard = false;
 putCard = false;
+skipTurn = false;
 
-
+playerNumCards[3];
 PlayerTurn = 0;
+isClockWise = true;
 
 
 class Sprite {
@@ -40,25 +42,52 @@ class Sprite {
         if (takeCard) {
             card.type.x = int*Math.random()*cardTypes;
             card.type.y = int*Math.random()*colors;
+            resetState();
         }
 
-        if (putCard) {
-            DropOff.type = card.type;
-            turnSkipped();
+        if (putCard) { // player placing card from hand
+            //put card when either value type or color type is the same
+            if ( DropOff.type.x ==  card.type.x || DropOff.type.y ==  card.type.y ) {
+                DropOff.type = card.type; // added to center
+                playerNumCards[PlayerTurn]--; // remove number of cards of current active player
+                turnSkipped(); // next player turn
+            }
+            resetState();
         }
 
         if (skipTurn) {
             turnSkipped();
+            resetState();
         }
     }
 
     turnSkipped() {
-        PlayerTurn++;
+        
+        // next turns, determined by the reversal card
+        if (isClockWise) {
+            PlayerTurn++;
+        }
+
+        else {
+            PlayerTurn--;
+        }
+        
+        // bounds, player turns include: 0, 1, 2, and 3
         if (PlayerTurn >= 4) {
             PlayerTurn = 0;
         }
+
+        if (PlayerTurn <= -1) {
+            PlayerTurn = 3;
+        }
     }
-} 
+
+    resetState() {
+        takeCard = false;
+        putCard = false;
+        skipTurn = false;
+    }
+}
 
 const card = new Sprite({
     position: { x: playerCardPos.x, y: playerCardPos.y},
@@ -98,6 +127,9 @@ window.addEventListener('keydown', (event) => {
         break;
         case o:
             putCard = true;
+        break;
+        case s:
+            skipTurn = true;
         break;
     }
 })
