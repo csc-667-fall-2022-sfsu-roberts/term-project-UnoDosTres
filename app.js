@@ -12,6 +12,25 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const testsRouter = require('./routes/tests');
 
+
+//newly added part - Jonathan Chen
+const fs = require('fs')
+const port = 3000
+
+const server = http.createServer (function(req, res) {
+  res.writeHead (200, { 'Content-Type': 'text/html'})
+    fs.readfile('index.html', function(error, data) {
+    if (error) {
+    res.writeHead(404)
+    res.write( 'Error: File Not Found')
+    } else {
+    res.write(data)
+    }
+    res. end()
+    })
+})
+
+
 var app = express();
 
 // view engine setup
