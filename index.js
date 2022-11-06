@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 
