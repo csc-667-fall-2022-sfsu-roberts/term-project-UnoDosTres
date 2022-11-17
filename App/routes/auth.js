@@ -12,7 +12,7 @@ router.post("/login", (request, response) => {
     request.session.authenticated = true;
     request.session.username = username;
     
-    response.redirect("/");
+    response.redirect("/lobby");
 });
 
 router.get("/register", (request, response) => {
@@ -26,7 +26,7 @@ router.post("/register", (request, response) => {
     request.session.authenticated = true;
     request.session.username = username;
     
-    response.redirect("/");
+    response.redirect("/lobby");
 });
 
 module.exports = router;

@@ -8,6 +8,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const sessionInstance = require("./app-config/session");
+const protect = require("./app-config/protect");
 
 if(process.env.NODE_ENV === "development") {
   require("dotenv").config();
@@ -17,6 +18,8 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const testsRouter = require('./routes/tests');
 const authRouter = require('./routes/auth');
+const lobbyRouter = require('./routes/lobby');
+const gamesRouter = require('./routes/games');
 
 var app = express();
 
@@ -35,6 +38,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/tests', testsRouter);
 app.use('/auth', authRouter);
+app.use('/lobby', protect, lobbyRouter);
+app.use('/games', protect, gamesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
