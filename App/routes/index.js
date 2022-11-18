@@ -2,8 +2,12 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', (request, response) => {
+  const {sessionID } = request;
+  const { username } = request.session;
+  console.log({ username });
+
+  response.render('index', { username, sessionID });
 });
 
 module.exports = router;
