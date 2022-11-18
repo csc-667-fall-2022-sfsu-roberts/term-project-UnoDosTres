@@ -1,7 +1,3 @@
-// import * as dotenv from 'dotenv'
-// dotenv.config()
-// import express from 'express'
-
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');

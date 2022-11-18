@@ -3,11 +3,11 @@ var router = express.Router();
 
 router.get('/', (request, response) => {
     const {sessionID } = request;
-    const { username } = request.session;
+    const { username, userId } = request.session;
     
     console.log({ username });
 
-    response.render("lobby", { username, sessionID });
+    response.render("lobby", { username, userId });
 });
 
 module.exports = router;
