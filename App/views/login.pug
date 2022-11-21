@@ -14,3 +14,173 @@ block content
 
         div
             input(type="submit" value="Login")
+
+// FRONT END HERE - JONATHAN ---------------------------------------
+
+doctype html
+head
+  title UNO! Log in
+  link(rel='stylesheet' type='text/css' href='index.css')
+// Start Header
+table(border='0' width='100%' cellpadding='0' cellspacing='0' bgcolor='#851515')
+  tr
+    td
+      table(border='0' width='85%' cellpadding='15' cellspacing='0' align='center')
+        tr
+          td
+            font(face='Comic Sans MS' color='white' size='10')
+              // <div class="loader"></div>
+              strong UNO!
+          // some picture
+          td(width='10%' align='left' valign='middle')
+            img(src='logo.png' alt='Logo' width='200' height='200')
+          // some picture
+          td(width='40%' align='left' valign='middle')
+            font(face='Comic Sans MS' color='white' size='10')
+              // <div class="loader"></div>
+              strong returning to UNO? Awesome!
+          // The box with the links
+          td(width='50%' valign='middle')
+            table#sideLook
+              tr
+                td
+                  nav#site-navigation.main-navigation(role='navigation')
+                    .nav-menu
+                      ul
+                        li.current_page_item
+                          a(href='index.html#home' title='Home') Welcome
+                        li.page_item.page-item-1
+                          a.hassubchild(href='index.html#about') About
+                          ul.children
+                            li.page_item.page-item-3
+                              a(href='index.html#faq') FAQ
+                            li.page_item.page-item-3
+                              a(href='aboutPage.html')
+                                | About Page
+                        // account
+                        li.page_item.page-item-7
+                          a.hassubchild(href='myAccount.html') My Account
+                          ul.children
+                            li
+                              a.cd-signin(href='logBack.html') Sign in
+                            li
+                              a.cd-signup(href='signUp.html') Sign up
+                        li.page_item.page-item-11
+                          a(href='index.html#contact') Contact
+                        li
+                          a.cd-signup(href='surprise.html') Surprise
+                    // .nav-menu
+                  // #site-navigation
+// End Header
+style.
+  #sideLook {
+  border-radius: 25px;
+  background: #e67777;
+  padding: 15px;
+  spacing: 0;
+  align: center;
+  width: 100%;
+  }
+// Start Log in
+table#contact(border='0' width='100%' cellpadding='0' cellspacing='0' bgcolor='#c21010')
+  tr
+    td
+      table(border='0' width='85%' cellpadding='15' cellspacing='0' align='center')
+        // Heading Start
+        tr
+          td(height='160' align='center' valign='middle')
+            font(face='arial' size='8' color=' #ff9e99')
+              strong Log in
+            hr(width='70' color='#ff9e99')
+        // Heading  End
+        style.
+          #buttonStyleTwo {
+          border-radius: 200px;
+          }
+        tr
+          td(align='center' valign='top')
+            table(border='0' width='55%' cellpadding='20' cellspacing='0' align='center' bgcolor='#c21010')
+              tr
+                td
+                  table(border='0' width='100%' cellpadding='15' cellspacing='0' align='center' bgcolor='#c21010')
+                    td(width='30%')
+                      font(face='arial' size='4' color='#ffffff')
+                        | Email/Username
+                    td(width='70%')
+                      input(type='text' size='50')
+              tr
+                td(width='30%')
+                  font(face='arial' size='4' color='#ffffff')
+                    | password
+                td(width='70%')
+                  input(type='password' size='50')
+              tr
+                td(width='30%')
+                td(width='70%')
+                  a(href='index.html')
+                    button(type='reset' onclick="alert('Logging In...')")
+                      | Log in
+                  a(href='SignUp.html')
+                    button
+                      | Sign Up
+        table
+  // section padding bottom
+  tr
+    td(height='60')
+  // section padding bottom End
+// End Contact
+// Start Footer
+table(border='0' width='100%' cellpadding='0' cellspacing='0' bgcolor='#851515')
+  tr
+    td
+      table(border='0' width='85%' cellpadding='15' cellspacing='0' align='center')
+        p
+        style.
+          #centerAligner {
+          text-align: center;
+          }
+        #centerAligner
+        tr
+          td(width='33.33%' valign='top')
+            table(border='0' width='100%' cellpadding='15' cellspacing='0' align='center')
+              tr
+                td(align='center' valign='top')
+                  font(color='#ff9e99' size='6')
+                    span.fa.fa-phone
+                  br
+                  br
+                  font(color='#ffffff' size='5' face='arial')
+                    | Phone No
+                  p
+                    font(color='#c2c0c3' size='3' face='arial')
+                      | (408) 123-4567
+          td(width='33.33%' valign='top')
+            table(border='0' width='100%' cellpadding='15' cellspacing='0' align='center')
+              tr
+                td(align='center' valign='top')
+                  font(color='#ff9e99' size='6')
+                    span.fa.fa-envelope
+                  br
+                  br
+                  font(color='#ffffff' size='5' face='arial')
+                    | Email
+                  p
+                    font(color='#c2c0c3' size='3' face='arial')
+                      | Uno@UNO.org
+          td(width='33.33%' valign='top')
+            table(border='0' width='100%' cellpadding='15' cellspacing='0' align='center')
+              tr
+                td(align='center' valign='top')
+                  font(color='#ff9e99' size='6')
+                    span.fa.fa-map-marker
+                  br
+                  br
+                  font(color='#ffffff' size='5' face='arial')
+                    | Location
+                  p
+                    font(color='#c2c0c3' size='3' face='arial')
+                      | Not Specified.
+        tr
+          td(colspan='3')
+            hr(noshade='')
+// End Footer
