@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const { STRING } = require("sequelize");
 
@@ -11,7 +11,7 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
-      username: {
+      email: {
         type: Sequelize.STRING,
         allowNull: false,
       },

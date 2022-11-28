@@ -11,14 +11,21 @@ router.post("/login", (request, response) => {
     const { username, password } = request.body;
     console.log({ username, password });
 
-    request.session.authenticated = true;
-    request.session.username = username;
+    Users.login({ username, password })
+        .then(({ id, username }) => {
+            request.session.authenticated = true;
+            request.session.userId = id;
+            request.session.username = username;
+            
 
-    response.redirect("/lobby");
+            response.redirect("/lobby");
+        })
+        .catch((_error) => response.redirect("/auth/login"));
+
 });
 
 router.get("/register", (request, response) => {
-    response.render("/register");
+    response.render("register");
 });
 
 router.post("/register", (request, response) => {
@@ -32,10 +39,7 @@ router.post("/register", (request, response) => {
 
             response.redirect("/lobby");
         })
-        .catch((error) => {
-            console.log({ error });
-            response.redirect("/register");
-        });
+        .catch((_error) => response.redirect("/auth/register"));
 });
 
 module.exports = router;
