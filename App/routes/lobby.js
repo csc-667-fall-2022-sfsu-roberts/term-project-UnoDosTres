@@ -7,7 +7,7 @@ router.get('/', (request, response) => {
     
     console.log({ username });
 
-    response.render("lobby", { username, userId });
+    response.render("protected/lobby", { username, userId });
 });
 
 module.exports = router;

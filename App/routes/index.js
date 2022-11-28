@@ -7,7 +7,7 @@ router.get('/', (request, response) => {
   const { username } = request.session;
   console.log({ username });
 
-  response.render('index', { username, sessionID });
+  response.render('public/index', { username, sessionID });
 });
 
 module.exports = router;

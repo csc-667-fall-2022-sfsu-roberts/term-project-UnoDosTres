@@ -4,7 +4,7 @@ const Users = require("../db/users");
 const router = express.Router();
 
 router.get("/login", (request, response) => {
-    response.render("login");
+    response.render("public/login");
 });
 
 router.post("/login", (request, response) => {
@@ -25,7 +25,7 @@ router.post("/login", (request, response) => {
 });
 
 router.get("/register", (request, response) => {
-    response.render("register");
+    response.render("public/register");
 });
 
 router.post("/register", (request, response) => {
@@ -40,6 +40,12 @@ router.post("/register", (request, response) => {
             response.redirect("/lobby");
         })
         .catch((_error) => response.redirect("/auth/register"));
+});
+
+router.get("/logout", (request, response) => {
+    request.session.destroy((error) => {
+        response.redirect("/");
+    });    
 });
 
 module.exports = router;
