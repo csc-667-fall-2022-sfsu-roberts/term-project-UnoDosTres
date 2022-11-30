@@ -2,5 +2,15 @@ extends layout
 
 block content
     h1 Lobby Page
-    if username
-        h2 Welcome #{username} (#{userId})
+        h2 Welcome (#{username} #{userId})
+
+    template#message-content
+        .chat-message
+            span.username
+            span.message 
+            span.timestamp
+
+    #chat 
+        #messages
+        div
+            input#message(type="text")

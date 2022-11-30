@@ -4,7 +4,9 @@ const Users = require("../db/users");
 const router = express.Router();
 
 router.get("/login", (request, response) => {
-    response.render("public/login");
+    response.render("public/login", {
+        username: request.session.username,
+    });
 });
 
 router.post("/login", (request, response) => {
@@ -12,16 +14,14 @@ router.post("/login", (request, response) => {
     console.log({ username, password });
 
     Users.login({ username, password })
-        .then(({ id, username }) => {
+        .then(({ username, id }) => {
             request.session.authenticated = true;
-            request.session.userId = id;
             request.session.username = username;
-            
+            request.session.userId = id;
 
-            response.redirect("/lobby");
+            response.redirect("/authenticated/lobby");
         })
         .catch((_error) => response.redirect("/auth/login"));
-
 });
 
 router.get("/register", (request, response) => {
@@ -34,8 +34,8 @@ router.post("/register", (request, response) => {
     Users.register({ username, password })
         .then(({ id, username }) => {
             request.session.authenticated = true;
-            request.session.userId = id;
             request.session.username = username;
+            request.session.userId = id;
 
             response.redirect("/lobby");
         })
@@ -45,7 +45,7 @@ router.post("/register", (request, response) => {
 router.get("/logout", (request, response) => {
     request.session.destroy((error) => {
         response.redirect("/");
-    });    
+    });
 });
 
 module.exports = router;
