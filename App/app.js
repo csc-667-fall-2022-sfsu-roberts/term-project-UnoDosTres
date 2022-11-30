@@ -34,8 +34,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/tests', testsRouter);
 app.use('/auth', authRouter);
-app.use('/lobby', protect, lobbyRouter);
-app.use('/games', protect, gamesRouter);
+app.use('/lobby', lobbyRouter);
+app.use('/games', gamesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
