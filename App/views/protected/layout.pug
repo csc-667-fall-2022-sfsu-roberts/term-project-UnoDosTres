@@ -3,14 +3,19 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="/socket.io/socket.io.js")
+
   body
     ul
       li
         a(href="/") Home
       li 
-        a(href="/lobby") Lobby
+        a(href="/authenticated/lobby") Lobby
       li 
-        a(href="/games/42") Game Page 
+        a(href="/authenticated/games/42") Game Page 
       li 
         a(href="/auth/logout") Logout
+
     block content
+    
+    script(src="/javascripts/chat.js")
