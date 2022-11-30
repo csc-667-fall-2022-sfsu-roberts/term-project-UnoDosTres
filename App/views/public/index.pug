@@ -1,6 +1,6 @@
-extends layout
+//extends layout
 
-block content
+//block content
   h1 Index(Home) Page
   if username
     h2 Welcome #{username}
@@ -11,3 +11,177 @@ block content
       a(href="/auth/register") Register
     li
       a(href="/auth/login") Login
+
+//extends layout
+
+//block content
+// h1 Index(Home) Page
+  if username
+    h2 Welcome #{username}
+  ul
+    li
+      a(href="/games/42") Games
+    li
+      a(href="/auth/register") Register
+      li
+      a(href="/auth/login") Login
+
+// FRONT END HERE - JONATHAN ---------------------------------------
+
+doctype html
+head
+  title UNO! The Game
+  style.
+    #header_Light_Style {
+    background-color: #c21010;
+    border: 0;
+    width: 100%;
+    padding: 0px;
+    }
+    #header_Dark_Style {
+    border: 0;
+    width: 100%;
+    padding: 0px;
+    background-color:#851515;
+    }
+    #smallBox {
+    border: 0;
+    border-radius: 25px;
+    background: #851515;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    }
+    #whiteText {
+    color: white;
+    font-family: "Comic Sans MS";
+    font-size: 300%;
+    }
+    #titleText {
+    color: yellow;
+    font-family: "Comic Sans MS";
+    font-size: 300%;
+    }
+    #urlText {
+    color: white;
+    font-family: "Comic Sans MS";
+    font-size: 100%;
+    }
+    #buttonStyle {
+    border-color: #851515;
+    background-color:#851515;
+    color: white;
+    border-radius: 200px;
+    }
+// Start Header
+table#header_Light_Style
+  tr
+    td
+      table(border='0' width='85%' cellpadding='15' cellspacing='0' align='center')
+        tr
+          td
+            font#titleText
+              strong UNO!
+          // some picture
+          td(width='10%' align='left' valign='middle')
+            img(src='logo.png' alt='Logo' width='200' height='200')
+          // some picture
+          td(width='40%' align='left' valign='middle')
+            font#whiteText
+              strong The Number One Card Game
+          // The box with the links
+          td(width='50%' valign='middle')
+            table#smallBox
+              tr
+                td
+                  ul
+                    li
+                      a#urlText(href="/games/42") Games
+                    li
+                      a#urlText(href="/auth/login") Login
+                    li
+                      a#urlText(href="/auth/register") Register
+                    li
+                      a#urlText(href='/auth/account') My Account
+                    li
+                      a#urlText(href='/auth/surprise') Surprise
+                    li
+                      a#urlText(href='/auth/about') About
+// End Header
+// Start Home
+table#header_Dark_Style
+  tr
+    td
+      table(border='0' width='85%' cellpadding='15' cellspacing='0' align='center')
+        tr
+          td(align='center' valign='middle' height='300')
+            h1
+              font(face='Comic Sans MS' color='#ffffff' size='10')
+                | UNO! The Game.
+            h1
+              font(face='Comic Sans MS' color='#ffffff' size='5')
+                | A Multiplayer Uno Game.
+            h1
+              marquee(behavior='scroll' direction='right' scrollamount='10')
+                font(face='arial' color='white' size='50')
+                  | ( &#x361;&deg; &#x35C;&#x296; &#x361;&deg;)
+              br
+              br
+            h1
+              // behavior="slide" direction="left" scrollamount="3">
+              font(face='arial' color='#ff7070' size='20')
+                | Turn your friends into enemies!
+              br
+              font(face='arial' color='#ff7070' size='20')
+                | Click Here To Play NOW!
+// End Home
+// Start Footer
+table(border='0' width='100%' cellpadding='0' cellspacing='0' bgcolor='#851515')
+  tr
+    td
+      table(border='0' width='85%' cellpadding='15' cellspacing='0' align='center')
+        p
+        tr
+          td(width='33.33%' valign='top')
+            table(border='0' width='100%' cellpadding='15' cellspacing='0' align='center')
+              tr
+                td(align='center' valign='top')
+                  font(color='#ff9e99' size='6')
+                    span.fa.fa-phone
+                  br
+                  br
+                  font(color='#ffffff' size='5' face='arial')
+                    | Phone No
+                  p
+                    font(color='#c2c0c3' size='3' face='arial')
+                      | BlahBlahBlahBlah
+          td(width='33.33%' valign='top')
+            table(border='0' width='100%' cellpadding='15' cellspacing='0' align='center')
+              tr
+                td(align='center' valign='top')
+                  font(color='#ff9e99' size='6')
+                    span.fa.fa-envelope
+                  br
+                  br
+                  font(color='#ffffff' size='5' face='arial')
+                    | Email
+                  p
+                    font(color='#c2c0c3' size='3' face='arial')
+                      | Blah@Blah.com
+          td(width='33.33%' valign='top')
+            table(border='0' width='100%' cellpadding='15' cellspacing='0' align='center')
+              tr
+                td(align='center' valign='top')
+                  font(color='#ff9e99' size='6')
+                    span.fa.fa-map-marker
+                  br
+                  br
+                  font(color='#ffffff' size='5' face='arial')
+                    | Location
+                  p
+                    font(color='#c2c0c3' size='3' face='arial')
+                      | Blah
+        tr
+          td(colspan='3')
+            hr(noshade='')
+// End Footer
