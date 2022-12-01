@@ -14,22 +14,6 @@
 
         div
             input(type="submit" value="Register")
-//extends layout 
-
-//block content
-    h1 Register Page 
-
-    form(action="/auth/register" method="post")
-        div
-            label(for="username")
-            input(type="text" name="username")
-
-        div
-            label(for="password")
-            input(type="password" name="password")
-
-        div
-            input(type="submit" value="Register")
 
 // FRONT END HERE - JONATHAN ---------------------------------------
 
@@ -100,24 +84,22 @@ table(border='0' width='100%' cellpadding='0' cellspacing='0' bgcolor='#851515')
               strong New to UNO? You're in the RIGHT PLACE!
           // The box with the links
           td(width='50%' valign='middle')
-            table#sideLook
+            table#smallBox
               tr
                 td
-                  nav#site-navigation.main-navigation(role='navigation')
-                    .nav-menu
-                      ul
-                          li
-                            a#urlText(href="/games/42") Games
-                          li
-                            a#urlText(href="/auth/login") Login
-                          li
-                            a#urlText(href="/auth/register") Register
-                          li
-                            a#urlText(href='/auth/account') My Account
-                          li
-                            a#urlText(href='/auth/surprise') Surprise
-                          li
-                            a#urlText(href='/auth/about') About
+                  ul
+                    li
+                      a#urlText(href="/games/42") Games
+                    li
+                      a#urlText(href="/auth/login") Login
+                    li
+                      a#urlText(href="/auth/register") Register
+                    li
+                      a#urlText(href='/auth/account') My Account
+                    li
+                      a#urlText(href='/auth/surprise') Surprise
+                    li
+                      a#urlText(href='/auth/about') About
                     // .nav-menu
                   // #site-navigation
 // End Header
@@ -152,13 +134,15 @@ table#contact(border='0' width='100%' cellpadding='0' cellspacing='0' bgcolor='#
               table
                 form(action="/auth/register" method="post")
                   div
+                      font(face='Comic Sans MS' color='white' size='5') username
                       label(for="username")
                       input(type="text" name="username")
 
                   div
+                      font(face='Comic Sans MS' color='white' size='5') password
                       label(for="password")
                       input(type="password" name="password")
-
+                  <br/><br/><br/>
                   div
                       input(type="submit" value="Register")
               
