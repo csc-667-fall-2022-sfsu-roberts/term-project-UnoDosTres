@@ -20,9 +20,9 @@ input.addEventListener("keydown", (event) => {
 socket.on("chat:0", ({ username, message, timestamp }) => {
     console.log({ username, message, timestamp });
     
-    const content = messageTempate.content.cloneNode(true);
+    const content = messageTemplate.content.cloneNode(true);
 
-    content.querySelector(".username").innerext = username;
+    content.querySelector(".username").innerText = username;
     content.querySelector(".message").innerText = message;
     content.querySelector(".timestamp").innerText = timestamp;
 

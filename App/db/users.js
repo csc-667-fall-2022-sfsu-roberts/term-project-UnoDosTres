@@ -3,7 +3,7 @@ const db = require("./index");
 
 const LOOKUP_USER = "SELECT * FROM users WHERE email=${username}";
 
-const REGISTER_USER = "INSERT INTO users (email, password) VALUES (${username}, ${password}) RETURNING id, email AS username";
+const REGISTER_USER = "INSERT INTO users (email, password) VALUES (${username}, ${password}) RETURNING id, email";
 
 const FIND_USER = "SELECT * FROM users WHERE email=${username} AND password=${password}";
 
