@@ -14,14 +14,14 @@ router.post("/login", (request, response) => {
     console.log({ username, password });
 
     Users.login({ username, password })
-        .then(({ username, id }) => {
+        .then(({ email, id }) => {
             request.session.authenticated = true;
-            request.session.username = username;
+            request.session.username = email;
             request.session.userId = id;
 
             response.redirect("/authenticated/lobby");
         })
-        .catch((_error) => response.redirect("/auth/login"));
+        .catch((_error) => response.redirect("/public/login"));
 });
 
 router.get("/register", (request, response) => {
