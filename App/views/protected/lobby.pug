@@ -1,21 +1,19 @@
-//extends layout 
 
+
+extends layout 
 //block content
     h1 Lobby Page
         h2 Welcome (#{username} #{userId})
-
     template#message-content
         .chat-message
             span.username
             span.message 
             span.timestamp
-
     #chat 
         #messages
         div
             input#message(type="text")
             
-
 // FRONT END HERE - JONATHAN ---------------------------------------
 doctype html
 head
@@ -147,10 +145,10 @@ table#contact(border='0' width='100%' cellpadding='0' cellspacing='0' bgcolor='#
                       span.message 
                       span.timestamp
 
-                    #chat 
-                        #messages
-                        div
-                            input#message(type="text")
+                  #chat 
+                    #messages
+                    div
+                      input#message(type="text")
                 <br/><br/>
         table
 
