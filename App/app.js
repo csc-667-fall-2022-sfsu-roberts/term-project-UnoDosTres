@@ -37,7 +37,7 @@ app.use('/tests', testsRouter);
 app.use('/auth', authRouter);
 app.use('/authenticated/lobby', lobbyRouter);
 app.use('/authenticated/games', gamesRouter);
-app.use('/chat', protect, chatRouter);
+app.use('/chat', chatRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
