@@ -23,8 +23,8 @@ block content
         ul 
             each game in games.joinable    
                 li 
-                    form(action=`/games/${game.id}/join`)
-                        button(type="submit") Join  #{game.title || game.id}
+                    form(action=`/games/${game.id}/join` method="post")
+                        button(type="submit") Join #{game.title || game.id}
     
     h4 General Chat
     template#message-content
@@ -36,5 +36,5 @@ block content
     #chat 
         #messages
         div
-            input#message(type="text")
+            input#message(type="text" method="post")
             button(type="submit") Send
