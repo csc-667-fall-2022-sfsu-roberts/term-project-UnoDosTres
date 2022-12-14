@@ -32,7 +32,7 @@ router.post("/:id/join", (request, response) => {
 router.get("/:id", (request, response) => {
     const { id } = request.params;
 
-    response.render("authenticated/games", { id });
+    response.render("protected/game", { id });
 });
 
 module.exports = router;
