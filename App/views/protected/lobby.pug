@@ -8,7 +8,7 @@ block content
     #create-game
         form(action="/authenticated/games/create" method="post")
             label(for="title")
-            input(type="text" name="title")
+            input(type="text" name="title" placeholder="Game Title")
             button(type="submit") Create Game
            
     h2 Active Games
@@ -36,5 +36,5 @@ block content
     #chat
         #messages
         div
-            input#message(type="text" method="post")
+            input#message(type="text" method="post" placeholder="Say hello")
             button(type="submit") Send
