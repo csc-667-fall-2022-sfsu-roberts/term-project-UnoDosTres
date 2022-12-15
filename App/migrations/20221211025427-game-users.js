@@ -6,7 +6,7 @@ module.exports = {
     await queryInterface.createTable("game_users", {
       game_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       user_id: {
         type: Sequelize.INTEGER,

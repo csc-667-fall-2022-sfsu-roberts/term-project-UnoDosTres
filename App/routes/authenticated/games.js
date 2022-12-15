@@ -16,7 +16,7 @@ router.post("/create", (request, response) => {
 });
 
 router.post("/:id/join", (request, response) => {
-    const { game_id } = request.params;
+    const { id: game_id } = request.params;
     const { userId } = request.session;
 
     Games.join(game_id, userId)

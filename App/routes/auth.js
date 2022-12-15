@@ -37,7 +37,7 @@ router.post("/register", (request, response) => {
             request.session.username = username;
             request.session.userId = id;
 
-            response.redirect("/lobby");
+            response.redirect("/authenticated/lobby");
         })
         .catch((_error) => response.redirect("/auth/register"));
 });
