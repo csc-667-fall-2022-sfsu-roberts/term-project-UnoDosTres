@@ -1,7 +1,19 @@
-extends layout 
-block content
-    h1 Game Page #{id}
+extends layout
 
+block styles
+    link(rel='stylesheet', href='/stylesheets/games.css')
+    link(rel="shortcut icon" href="#")
+
+block content
+    h1 Game Page (#{title})
+
+    p#waiting(class=`${ready ? "hidden" : ""}`) Waiting on users (#[span.current-count #{count}] of #[span.required-count #{required_count}])
+
+    #game-table(class=`${ready ? "" : "hidden"}`)
+        .draw-pile
+            .card.special
+        #discard
+    
     h4 Game Chat
     template#message-content
         .chat-message
@@ -14,4 +26,7 @@ block content
         div
             input#message(type="text" method="post" placeholder="Say hello")
             button(type="submit") Send
+
+block footer 
+    script(src="/javascripts/games/join.js")
     
